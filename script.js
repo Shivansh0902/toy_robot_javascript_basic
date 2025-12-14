@@ -39,25 +39,65 @@ function place(ix,iy,ifacing){
 
 }
 
-function move(){}
-function left(){}
-function right(){}
+function move(){
+    let new_x = x;
+    let new_y = y;
+
+    if(!is_placed){
+        return false;
+    }
+
+    if ( facing === "NORTH" ){
+        new_y +=1;
+    }
+    else if ( facing === "SOUTH" ){
+        new_y -=1;
+    }
+    else if ( facing === "EAST" ){
+        new_x +=1;
+    }
+    else if ( facing === "WEST" ){
+        new_x -=1;
+    } 
+    // checking if the new position is within bounds
+    if (new_x < 0 || new_x > 4 || new_y <  0 || new_y > 4) {
+        return false;
+    }
+
+    // updaing the new coordinates
+    x = new_x;
+    y = new_y;
+    return true;    
+}
+
+function left(){
+
+}
+
+function right(){
+    
+}
+
 function report(){
     if (is_placed){
-        console.log("Output: " + x +" , " +y+" ,"+ facing)
+        console.log("Output: " + x +" , " +y+" , "+ facing)
     }
 }
 
 // testing initial logic for the code 
-place(0,0,"NORTH")      // true
-place(10,3,"NORTH")     // false
-place(-1,2,"NORTH")     // false
-place(1,8,"NORTH")      // false
-place(2,-1,"NORTH")     // false
-place(1,1,"EASTERM")    // false
-place(0,0," South")     // true
-place(2,2," west " )    // true
-place(1,3,"east")       // true
-place(2,2,"west " )    // true
-
+place(0,4,"NORTH")
+move();          
 report();
+
+// place(10,3,"NORTH")     // false
+// place(-1,2,"NORTH")     // false
+// place(1,8,"NORTH")      // false
+// report();
+// place(2,-1,"NORTH")     // false
+// place(1,1,"EASTERM")    // false
+// place(0,0," South")     // true
+// place(2,2," west " )    // true
+// place(1,3,"east")       // true
+// place(2,2,"west " )     // true
+// report();
+// move();
