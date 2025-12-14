@@ -75,7 +75,7 @@ function left(){
 }
 
 function right(){
-    
+
 }
 
 function report(){
@@ -87,6 +87,14 @@ function report(){
 // testing initial logic for the code 
 place(0,4,"NORTH")
 move();          
+report();
+place(0,4,"SOUTH")
+move(); // 0,3
+report();
+move();
+move();
+move();
+move();// 0,-1 as false but not moving 
 report();
 
 // place(10,3,"NORTH")     // false
