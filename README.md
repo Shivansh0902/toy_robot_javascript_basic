@@ -5,10 +5,10 @@ Also there should be a is_placed bolean which assumes inital state as false whic
 
 ### Place function 
 First working on the place function 
-inital x and y should be null,
-also adding some checks if x and y are integers so if anything else added not counted and also they do not go outside the range from 0-4, 0-4 , where x is horizontal axis and y is veritical. if any other values from range of -04 then it should not be accepted 
-
-for facing, it is a string directions ( should be able to accept lower case which is later converted to upper.) any other string values other then this is not accepted.
+1. inital x and y should be null as currently robot is not placed 
+2. also adding some checks if x and y are integers so if anything else added not counted and also they do not go outside the range from 0-4, 0-4 , where x is horizontal axis and y is veritical. 
+3. if any other values from range of 0-4 then it should not be accepted.
+4. for facing, it is a string directions ( should be able to accept lower case which is later converted to upper.) any other string values other then this is not accepted.
 
 Once All these conditions are me, then robot is placed if not then robot is never placed.
 
