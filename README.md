@@ -12,3 +12,5 @@ First working on the place function
 
 Once All these conditions are me, then robot is placed if not then robot is never placed.
 
+
+### Move function 

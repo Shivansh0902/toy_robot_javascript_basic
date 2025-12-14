@@ -15,16 +15,17 @@ function place(ix,iy,ifacing){
         return false;
     }
     // checking if x and y are with the bounts of 0-4
-    if (!(ix >= 0 || ix <= 4 || iy >= 0 || iy <= 4)){
+    if (ix < 0 || ix > 4 || iy < 0 || iy > 4) {
         return false;
     }
-    // if input facing is not string then returning false
+    // if input given is not string then returning false
     if (typeof(ifacing) !== 'string'){
         return false;
     }
     // converting is facing to upper case 
     // using trim function to remove any extra spaces 
     let input_facing = ifacing.trim().toUpperCase();
+    
     // checking if the facing is valid
     if (!(VALID_DIRECTION.includes(input_facing))){
         return false;
@@ -45,11 +46,14 @@ function report(){}
 
 
 // testing initial logic for the code 
-console.log(place(0,0,"NORTH"));
-console.log(place(10,3,"NORTH"));
-console.log(place(-1,2,"NORTH"));
-console.log(place(1,8,"NORTH"));
-console.log(place(2,-1,"NORTH"));
-console.log(place(1,1,"EASTERM"));
-console.log(place(0,0,"South"));
-console.log(place(2,2,"west"));
+place(0,0,"NORTH")      // true
+place(10,3,"NORTH")     // false
+place(-1,2,"NORTH")     // false
+place(1,8,"NORTH")      // false
+place(2,-1,"NORTH")     // false
+place(1,1,"EASTERM")    // false
+place(0,0," South")     // true
+place(2,2," west " )    // true
+place(1,3,"east")       // true
+place(2,2,"west " )    // true
+
