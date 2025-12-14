@@ -71,11 +71,52 @@ function move(){
 }
 
 function left(){
+   
+   if (!is_placed){
+       return false;
+    }
+    let current_facing = facing.toLowerCase();
 
+    if(current_facing === "north"){
+        current_facing  = "west";
+    }
+    else if (current_facing === "west"){
+        current_facing = "south"
+    }
+    else if(current_facing === "south"){
+        current_facing = "east"
+    }
+    else if(current_facing === "east"){
+        current_facing = "north"
+    }
+
+    // once direction changed the code should running accordingly 
+    facing = current_facing.toUpperCase()
+    return true
 }
 
 function right(){
+    if (!is_placed){
+       return false;
+    }
+    let current_facing = facing.toLowerCase();
 
+    if(current_facing === "north"){
+        current_facing  = "east";
+    }
+    else if (current_facing === "west"){
+        current_facing = "north"
+    }
+    else if(current_facing === "south"){
+        current_facing = "west"
+    }
+    else if(current_facing === "east"){
+        current_facing = "south"
+    }
+
+    // once direction changed the code should running accordingly 
+    facing = current_facing.toUpperCase()
+    return true
 }
 
 function report(){
@@ -85,18 +126,7 @@ function report(){
 }
 
 // testing initial logic for the code 
-place(0,4,"NORTH")
-move();          
-report();
-place(0,4,"SOUTH")
-move(); // 0,3
-report();
-move();
-move();
-move();
-move();// 0,-1 as false but not moving 
-report();
-
+// cases for the place function to work 
 // place(10,3,"NORTH")     // false
 // place(-1,2,"NORTH")     // false
 // place(1,8,"NORTH")      // false
@@ -109,3 +139,57 @@ report();
 // place(2,2,"west " )     // true
 // report();
 // move();
+
+// test cases for the move function
+// place(0,4,"NORTH");
+// move();          
+// report();
+// place(0,4,"SOUTH");
+// move(); // 0,3
+// report();
+// move();
+// move();
+// move();
+// move();// 0,-1 as false but not moving 
+// report();
+
+
+// // test cases for the left function 
+// place(2,3,"NORTH");
+// report();
+// left();
+// report();
+// move();          
+// report();
+// // test case 2 
+// place(1,2,"east");
+// report();
+// left();
+// move(); // 0,3
+// report();
+// move();
+// move();
+// move();
+// move();// 0,-1 as false but not moving 
+// report();
+
+// test cases for the right function 
+place(3,3,"NORTH");
+report();
+right();
+report();
+move();
+right();          
+report();
+// test case 2 
+place(4,2,"east");
+report();
+right();
+move(); // 0,3
+report();
+move();
+move();
+right();
+move();
+move();// 0,-1 as false but not moving 
+report();
