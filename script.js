@@ -42,8 +42,11 @@ function place(ix,iy,ifacing){
 function move(){}
 function left(){}
 function right(){}
-function report(){}
-
+function report(){
+    if (is_placed){
+        console.log("Output: " + x +" , " +y+" ,"+ facing)
+    }
+}
 
 // testing initial logic for the code 
 place(0,0,"NORTH")      // true
@@ -57,3 +60,4 @@ place(2,2," west " )    // true
 place(1,3,"east")       // true
 place(2,2,"west " )    // true
 
+report();

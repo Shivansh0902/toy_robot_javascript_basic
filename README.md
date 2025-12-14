@@ -14,3 +14,7 @@ Once All these conditions are me, then robot is placed if not then robot is neve
 
 
 ### Move function 
+1. once the placed function is valid and robot is placed
+2. then robot moves in the direction it is faing until that move will cause robot to fall off grid here what i assume is that when robot reaches to any one end of the grid which is either any sides of grip (x,4) or (4,y), it will fall it should not move after that, similar condition in the placed 
+3. if the direction is north then y +=1 , if south, y-=1 , if same for east and west x +/-=1 for the movement 
+4. once it reachees it should not be able to move th
