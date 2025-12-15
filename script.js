@@ -1,11 +1,9 @@
 
 // inital robot as object
-let x = null;
-let y = null;
-let facing = null;
-let is_placed = false;
-
-
+// let x = null;
+// let y = null;
+// let facing = null;
+// let is_placed = false;
 
 function place(ix,iy,ifacing){
     // directions which are valid for the robot
@@ -36,7 +34,6 @@ function place(ix,iy,ifacing){
     facing = input_facing;
     is_placed = true;
     return true;
-
 }
 
 function move(){
@@ -121,9 +118,13 @@ function right(){
 
 function report(){
     if (is_placed){
-        console.log("Output: " + x +" , " +y+" , "+ facing)
+        return `Output ${x},${y}, ${facing}`
+    }
+    else{
+        return `Out of Bounds : ${x},${y}, ${facing}`
     }
 }
+
 
 // testing initial logic for the code 
 // cases for the place function to work 
@@ -193,3 +194,54 @@ right();
 move();
 move();// 0,-1 as false but not moving 
 report();
+
+const outputHistory =[];
+
+function log(message){
+    outputHistory.push(message)
+    document.getElementById("output").textContent = outputHistory.join("\n");
+}
+
+function handlePlace(){
+    let xValue = parseInt(document.getElementById("xInput").value);
+    let yValue = parseInt(document.getElementById("yInput").value);
+    let facingVal = document.getElementById("faceInput").value
+    let correct_place = place(xValue,yValue,facingVal);
+    if (correct_place){
+        log("Placed at :" + xValue +", "+ yValue + ", "+facingVal);
+    }
+    else{
+        log("outofbounds!!");
+    }
+}
+
+function handleMove(){
+    if (move()){
+        log("move forward");
+    }
+    else{
+        log("incorrect move");
+    }
+}
+
+function handleLeft(){
+    if (left()){
+        log("turn left");
+    }
+    else{
+        log("incorrect move");
+    }
+}
+
+function handleRight(){
+    if (right()){
+        log("turn right");
+    }
+    else{
+        log("incorrect move");
+    }
+}
+
+function handleReport(){
+    log(report());
+}

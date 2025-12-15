@@ -3,9 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Robot Toy basic</title>
+    <title>Toy Robot Challenge</title>
 </head>
 <body>
+    <h1> Toy Robot </h1>
+    <div class ="controls">
+        <input type = "number" id="xInput" placeholder="X" value ="0">
+        <input type = "number" id="yInput" placeholder="Y" value ="0">
+        <select id ="faceInput">
+            <option value="NORTH">NORTH</option>
+            <option value="SOUTH">SOUTH</option>
+            <option value="EAST">EAST</option>
+            <option value="WEST">WEST</option>
+        </select>
+        <button onclick="handlePlace()">Place</button>
+        <br>
+        <br>
+        <br>
+        <h3>Commands</h3>
+        <button onclick="handleLeft()">Left</button>
+        <button onclick="handleRight()">Right</button>
+        <button onclick="handleMove()">Move</button>
+        <button onclick="handleReport()">Report</button>
+
+    </div>
+    <br>
+    <br>
+    <br>
     
+    <pre id="output"></pre>
+    <script src="script.js"></script>
 </body>
 </html>
