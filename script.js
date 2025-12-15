@@ -1,9 +1,9 @@
 
-// inital robot as object
-// let x = null;
-// let y = null;
-// let facing = null;
-// let is_placed = false;
+//inital robot as object
+let x = null;
+let y = null;
+let facing = null;
+let is_placed = false;
 
 function place(ix,iy,ifacing){
     // directions which are valid for the robot
@@ -117,12 +117,10 @@ function right(){
 }
 
 function report(){
-    if (is_placed){
-        return `Output ${x},${y}, ${facing}`
+    if (!is_placed){
+        return "Robot not placed yet"
     }
-    else{
-        return `Out of Bounds : ${x},${y}, ${facing}`
-    }
+    return `Output: ${x}, ${y}, ${facing}`;
 }
 
 
@@ -175,25 +173,25 @@ function report(){
 // report();
 
 // test cases for the right function 
-place(3,3,"NORTH");
-report();
-right();
-report();
-move();
-right();          
-report();
-// test case 2 
-place(4,2,"east");
-report();
-right();
-move(); // 0,3
-report();
-move();
-move();
-right();
-move();
-move();// 0,-1 as false but not moving 
-report();
+// place(3,3,"NORTH");
+// report();
+// right();
+// report();
+// move();
+// right();          
+// report();
+// // test case 2 
+// place(4,2,"east");
+// report();
+// right();
+// move(); // 0,3
+// report();
+// move();
+// move();
+// right();
+// move();
+// move();// 0,-1 as false but not moving 
+// report();
 
 const outputHistory =[];
 
